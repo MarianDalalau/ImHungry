@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImHungry", "ImHungry\ImHungry.csproj", "{E2C51D2E-9E71-421E-AB7C-F9D5CEA7EE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImHungry.Tests", "ImHungry.Tests\ImHungry.Tests.csproj", "{E86E5A14-E14B-4717-A130-497581EEFEED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2C51D2E-9E71-421E-AB7C-F9D5CEA7EE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C51D2E-9E71-421E-AB7C-F9D5CEA7EE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C51D2E-9E71-421E-AB7C-F9D5CEA7EE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C51D2E-9E71-421E-AB7C-F9D5CEA7EE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E86E5A14-E14B-4717-A130-497581EEFEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E86E5A14-E14B-4717-A130-497581EEFEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E86E5A14-E14B-4717-A130-497581EEFEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E86E5A14-E14B-4717-A130-497581EEFEED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,69 @@
+﻿@model ImHungry.Helpers.Recipe.RecipeListResponse
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div>
+    <div class="searchOptions">
+
+
+        <div class="floatleft">
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+                @Html.TextBox("search")
+                <input type="submit" value="search" />
+            }
+        </div>
+        <div class="floatleft">
+            <div class="bar">
+                <div class="bar-item wit-microphone">
+                    <div class="mic mic-box icon-wit-mic">
+                    </div>
+                    <svg class="mic-svg mic-box">
+                        <path stroke="#eee" stroke-width="5" fill="none" d="M0,0"></path>
+                    </svg>
+                </div>
+            </div>                        
+            <div class="tooltip fade top in" role="tooltip">
+                <div class="tooltip-arrow" style="left: 50%;"></div>
+                <div class="tooltip-inner">Click here to start</div>
+            </div>
+
+
+            <span id="info"></span>
+            <span id="error"></span>
+            <span id="result"></span>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    <div>
+        @Html.ValidationSummary()
+
+    </div>
+    <div class="container">
+        @if (Model != null && Model.Data != null && Model.Data.Recipes != null)
+        {
+            foreach (ImHungry.Helpers.Recipe.RecipeModel recipe in Model.Data.Recipes)
+            {
+                <div class="item">
+                    <a href="@Url.Action("Detail", new { id = @recipe.Recipe_id})" target="_blank">
+                        <div class="img-polaroid">
+                            <img src="@recipe.Image_url" alt="@recipe.Title" />
+                            <br\>
+                            <span class="recipe-name">
+                                @recipe.Title</span>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+
+</div>
+
+
+

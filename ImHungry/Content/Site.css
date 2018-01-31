@@ -1,0 +1,76 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.searchOptions {
+    
+}
+.floatleft {
+    vertical-align:middle;
+    text-align:center;
+    float: left;
+    margin-right:100px;
+}
+
+.tooltip {
+    top: 21px; 
+    left: 724px;
+    display: block;
+}
+
+.tooltip-record .tooltip-inner{
+    background-color: #FF3F4E !important;
+}
+
+.tooltip-record .tooltip-arrow {
+    border-top-color: #FF3F4E !important;
+}
+
+ .recipeContainer {
+}
+
+.item {
+    margin: 5px;
+    width: 220px;
+    float: left;
+}
+
+img {
+    max-width: 100%;    
+}
+
+.img-polaroid {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.recipe-name {
+    font-weight: bold;
+    color: #5C5C5C;
+}
