@@ -45,8 +45,6 @@ mic.ondisconnected = function () {
 };
 
 mic.connect("JDW5BHPZ6W24HKNKOPE7XEQPLR5MV4PR");
-//mic.start();
-// mic.stop();
 
 function kv(k, v) {
     if (toString.call(v) !== "[object String]") {
@@ -57,7 +55,14 @@ function kv(k, v) {
 
 $('.wit-microphone').click(function (event) {
     //start/stop the microphone depending on user interaction
-    $(this).hasClass('active') ? mic.stop() : mic.start();
+    if ($(this).hasClass('active')) {
+        mic.stop();
+        $('.tooltip-inner').html('Click here to start');
+    }
+    else {
+        mic.start();
+        $('.tooltip-inner').html('Click here to stop');
+    }
 
     //add/remove the active class
     $(this).toggleClass('active');

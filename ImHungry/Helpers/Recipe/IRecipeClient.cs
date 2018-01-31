@@ -9,6 +9,6 @@ namespace ImHungry.Helpers.Recipe
     public interface IRecipeClient
     {
         Task<RecipeListResponse> GetRecipes(string searchStr);
-        Task<RecipeResponse> GetRecipe(int recipeId);
+        Task<RecipeResponse> GetRecipe(string recipeId);
     }
 }

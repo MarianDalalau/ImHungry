@@ -32,9 +32,9 @@ namespace ImHungry.Helpers.Recipe
             return await GetJsonDecodedContent<RecipeListResponse, RecipesModel>(SearchApiUrl, parameters.ToArray());
         }
 
-        public async Task<RecipeResponse> GetRecipe(int recipeId)
+        public async Task<RecipeResponse> GetRecipe(string recipeId)
         {
-            parameters.Add(new KeyValuePair<string, string>(RecipeIdKey, recipeId.ToString()));
+            parameters.Add(new KeyValuePair<string, string>(RecipeIdKey, recipeId));
             return await GetJsonDecodedContent<RecipeResponse, OneRecipeModel>(RecipeRequestUrl, parameters.ToArray());
         }
     }

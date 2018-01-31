@@ -1,7 +1,6 @@
 ﻿using ImHungry.Helpers;
 using ImHungry.Helpers.Api;
 using ImHungry.Helpers.Recipe;
-using ImHungry.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +33,7 @@ namespace ImHungry.Controllers
             return View(response);
         }
 
-        public async Task<ActionResult> Detail(int id)
+        public async Task<ActionResult> Detail(string id)
         {
             var response = await recipeClient.GetRecipe(id);
             if (!response.StatusIsSuccessful)
