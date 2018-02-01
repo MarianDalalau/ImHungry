@@ -10,13 +10,13 @@ namespace ImHungry.Helpers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="search"></param>
+        /// <param name="elements"></param>
         /// <returns></returns>
-        public static string FormatSearchString(string search)
+        public static string FormatSearchString(string[] elements)
         {
-            if (string.IsNullOrEmpty(search))
+            if (elements == null)
                 return string.Empty;
-            return  string.Join(",", search.Split(new char[] { ' ' }));
+            return  string.Join(",", elements);
             
         }
     }

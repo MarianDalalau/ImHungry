@@ -1,0 +1,18 @@
+﻿@model ImHungry.Helpers.Recipe.RecipeListResponse
+@if (Model != null && Model.Data != null && Model.Data.Recipes != null)
+{
+    foreach (ImHungry.Helpers.Recipe.RecipeModel recipe in Model.Data.Recipes)
+    {
+        <div class="item">
+            <a href="@Url.Action("Detail", new { id = @recipe.Recipe_id})" target="_blank">
+                <div class="img-polaroid">
+                    <img src="@recipe.Image_url" alt="@recipe.Title" />
+                    <br\>
+                        <span class="recipe-name">
+                            @recipe.Title
+                        </span>
+                </div>
+            </a>
+        </div>
+    }
+}

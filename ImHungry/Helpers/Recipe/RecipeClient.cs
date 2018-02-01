@@ -13,7 +13,7 @@ namespace ImHungry.Helpers.Recipe
         private const string SearchApiUrl = "api/search";
         private const string RecipeRequestUrl = "api/get";
         private const string SearchKey = "q";
-        private const string SortKey = "sort";
+        private const string SortKey = "sort";  // can be r or t   rating/trendiness
         private const string APIKey = "key";
         private const string RecipeIdKey = "rId";
 
@@ -25,10 +25,23 @@ namespace ImHungry.Helpers.Recipe
             
         }
 
-        public async Task<RecipeListResponse> GetRecipes(string searchStr)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="intent"></param>
+        /// <param name="ingredients"></param>
+        /// <returns></returns>
+        public async Task<RecipeListResponse> GetRecipes(string intent, string[] ingredients)
         {
-            parameters.Add(new KeyValuePair<string, string>(SortKey, "r"));
-            parameters.Add(new KeyValuePair<string, string>(SearchKey, Utils.FormatSearchString(searchStr)));
+            string sortValue = "t";
+            if (intent != null && intent != "popular")
+            {
+                sortValue = "r";
+                //add this if not popular, for popular we make a general search
+                parameters.Add(new KeyValuePair<string, string>(SearchKey, Utils.FormatSearchString(ingredients)));
+            }
+            parameters.Add(new KeyValuePair<string, string>(SortKey, sortValue));
+            
             return await GetJsonDecodedContent<RecipeListResponse, RecipesModel>(SearchApiUrl, parameters.ToArray());
         }
 

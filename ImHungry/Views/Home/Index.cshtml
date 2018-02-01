@@ -9,12 +9,8 @@
 
 
         <div class="floatleft">
-
-            @using (Html.BeginForm("Index", "Home", FormMethod.Get))
-            {
-                @Html.TextBox("search")
-                <input type="submit" value="search" />
-            }
+            @Html.TextBox("search")
+            <input type="submit" value="search" class="searchBtn" />                    
         </div>
         <div class="floatleft">
             <div class="bar">
@@ -44,23 +40,10 @@
         @Html.ValidationSummary()
 
     </div>
-    <div class="container">
-        @if (Model != null && Model.Data != null && Model.Data.Recipes != null)
-        {
-            foreach (ImHungry.Helpers.Recipe.RecipeModel recipe in Model.Data.Recipes)
-            {
-                <div class="item">
-                    <a href="@Url.Action("Detail", new { id = @recipe.Recipe_id})" target="_blank">
-                        <div class="img-polaroid">
-                            <img src="@recipe.Image_url" alt="@recipe.Title" />
-                            <br\>
-                            <span class="recipe-name">
-                                @recipe.Title</span>
-                        </div>
-                    </a>
-                </div>
-            }
-        }
+    <div class="results">
+        <div class="recipeContainer" id="recipeListContainer">
+            @Html.Partial("_RecipeList", Model);
+        </div>
     </div>
 
 </div>
