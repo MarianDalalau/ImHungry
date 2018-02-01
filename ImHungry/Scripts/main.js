@@ -108,6 +108,8 @@ $('.searchBtn').click(function (event) {
     });
 });
 
+//function used to refresh the recipe list
+//this can be call by the Search button or by the microphone response
 function RefreshRecipeResults(intent, ingredients)
 {
     $("#recipeListContainer").addClass("loading");

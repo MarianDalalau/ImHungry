@@ -6,36 +6,37 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ImHungry;
 using ImHungry.Controllers;
+using System.Threading.Tasks;
 
 namespace ImHungry.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
     {
-        //[TestMethod]
-        //public void Index()
-        //{
-        //    // Arrange
-        //    HomeController controller = new HomeController();
-
-        //    // Act
-        //    ViewResult result = controller.Index() as ViewResult;
-
-        //    // Assert
-        //    Assert.IsNotNull(result);
-        //}
-
         [TestMethod]
-        public void About()
+        public void Index()
         {
             // Arrange
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            Task<ActionResult> result = controller.Index() as Task<ActionResult>;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
         }
+
+        //[TestMethod]
+        //public void About()
+        //{
+        //    // Arrange
+        //    HomeController controller = new HomeController();
+
+        //    // Act
+        //    ViewResult result = controller.About() as ViewResult;
+
+        //    // Assert
+        //    Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+        //}
     }
 }
