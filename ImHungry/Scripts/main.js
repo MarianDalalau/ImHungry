@@ -141,3 +141,10 @@ function RefreshRecipeResults(intent, ingredients)
         }
     });
 }
+
+
+$("#search").keyup(function (event) {
+    if (event.keyCode === 13) {
+        $(".searchBtn").click();
+    }
+});

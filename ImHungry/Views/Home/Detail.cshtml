@@ -21,7 +21,7 @@
             <ul>
                 @foreach (string ingredient in Model.Data.Recipe.Ingredients)
                 {
-                    <li itemprop="ingredients">@ingredient</li>
+                    <li itemprop="ingredients">@Html.Raw(ingredient)</li>
                 }
             </ul>
             <h5>Directions:</h5>
