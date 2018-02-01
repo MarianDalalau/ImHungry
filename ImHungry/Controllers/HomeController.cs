@@ -28,6 +28,7 @@ namespace ImHungry.Controllers
 
         public async Task<ActionResult> Index()
         {
+            //show all
             var response = await recipeClient.GetRecipes("", null);
             if (!response.StatusIsSuccessful)
                 ModelState.AddModelError("apiError", "There is an error retrieving the recipes!");
@@ -38,7 +39,8 @@ namespace ImHungry.Controllers
         public async Task<ActionResult> RefreshRecipeList(SearchModel model)
         {
             var response = await recipeClient.GetRecipes(model.Intent, model.Ingredients);
-
+            if (!response.StatusIsSuccessful)
+                ModelState.AddModelError("apiError", "There is an error retrieving the recipes!");
             string result = ControllerContext.RenderPartialToString("_RecipeList", response);
 
             return Json(new {
@@ -51,6 +53,11 @@ namespace ImHungry.Controllers
             var response = await recipeClient.GetRecipe(id);
             if (!response.StatusIsSuccessful)
                 ModelState.AddModelError("apiError", "There is an error retrieving the recipe!");
+            else if (response == null || response.Data == null)
+            {
+                ModelState.AddModelError("apiError", "Something is wrong with this recipe!");
+            }
+
             return View(response);
         }
 

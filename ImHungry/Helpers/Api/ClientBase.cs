@@ -23,7 +23,7 @@ namespace ImHungry.Helpers.Api
             using (var apiResponse = await apiClient.GetFormEncodedContent(uri, requestParameters))
             {
                 var response = await CreateJsonResponse<TResponse>(apiResponse);
-                if(response.StatusIsSuccessful)
+                if(response.StatusIsSuccessful && response.ResponseResult.Length > 20)
                     response.Data = Json.Decode<TContentResponse>(response.ResponseResult);
                 return response;
             }

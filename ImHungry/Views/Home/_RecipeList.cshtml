@@ -1,4 +1,8 @@
 ﻿@model ImHungry.Helpers.Recipe.RecipeListResponse
+<div>
+    @Html.ValidationSummary()
+</div>
+
 @if (Model != null && Model.Data != null && Model.Data.Recipes != null)
 {
     foreach (ImHungry.Helpers.Recipe.RecipeModel recipe in Model.Data.Recipes)

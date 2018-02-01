@@ -5,36 +5,43 @@
 }
 
 <div class="row-fluid">
-    <div class="span5 offset1 about-container">
-        <!--Body content-->
-        <h1 itemprop="name" class="recipe-title">@Model.Data.Recipe.Title</h1>
-        <hr>
-        <img src="@Model.Data.Recipe.Image_url" alt="Model.Data.Recipe.Title" class="recipe-image" itemprop="image" />
-        <br /><br />
-
-        <h5>Ingredients:</h5>
-        <ul>
-            @foreach (string ingredient in Model.Data.Recipe.Ingredients)
-            {
-                <li itemprop="ingredients">@ingredient</li>
-            }
-        </ul>
-        <h5>Directions:</h5>
-        <a href="@Model.Data.Recipe.Source_url" target="_blank">View on <span itemprop="author">@Model.Data.Recipe.Publisher</span></a><br /><br />
-
-        <br />
-
+    <div>
+        @Html.ValidationSummary()
     </div>
+    @if (Model != null && Model.Data != null)
+    {
+        <div class="span5 offset1 about-container">
+            <!--Body content-->
+            <h1 itemprop="name" class="recipe-title">@Model.Data.Recipe.Title</h1>
+            <hr>
+            <img src="@Model.Data.Recipe.Image_url" alt="Model.Data.Recipe.Title" class="recipe-image" itemprop="image" />
+            <br /><br />
 
-    <div class="span4">
+            <h5>Ingredients:</h5>
+            <ul>
+                @foreach (string ingredient in Model.Data.Recipe.Ingredients)
+                {
+                    <li itemprop="ingredients">@ingredient</li>
+                }
+            </ul>
+            <h5>Directions:</h5>
+            <a href="@Model.Data.Recipe.Source_url" target="_blank">View on <span itemprop="author">@Model.Data.Recipe.Publisher</span></a><br /><br />
 
-        <div class="row-fluid">
-            <div class="span12 about-container">
-                <h5>@Model.Data.Recipe.Publisher</h5>
+            <br />
+
+        </div>
+
+        <div class="span4">
+
+            <div class="row-fluid">
+                <div class="span12 about-container">
+                    <h5>@Model.Data.Recipe.Publisher</h5>
                     <a href="@Model.Data.Recipe.Publisher_url" target="_blank">
                         <i class="icon-globe"></i>Visit Publisher Site
                     </a>
                 </div>
-            </div>            
+            </div>
         </div>
-    </div>
+
+    }
+</div>
