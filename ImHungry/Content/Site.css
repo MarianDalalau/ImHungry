@@ -32,9 +32,11 @@ textarea {
     background-repeat: no-repeat;
 }
 
+.searchBtn {
+    background-color: #b2b2b2;
+}
 
 .searchOptions {
-    
 }
 .floatleft {
     height:200px;    
@@ -46,7 +48,7 @@ textarea {
 }
 
 .tooltip {
-    top: 21px; 
+    top: 41px; 
     left: 842px;
     display: block;
 }
