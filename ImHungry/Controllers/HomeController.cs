@@ -41,6 +41,7 @@ namespace ImHungry.Controllers
             var response = await recipeClient.GetRecipes(model.Intent, model.Ingredients);
             if (!response.StatusIsSuccessful)
                 ModelState.AddModelError("apiError", "There is an error retrieving the recipes!");
+
             string result = ControllerContext.RenderPartialToString("_RecipeList", response);
 
             return Json(new {

@@ -33,7 +33,7 @@ mic.onresult = function (intent, entities) {
             }
         }
     }
-
+    //console.log("detected:" + r);
     RefreshRecipeResults(intent, ingredients);
     //document.getElementById("result").innerHTML = r;    
 };
